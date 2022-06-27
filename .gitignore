@@ -17,3 +17,4 @@ trash.lock
 .cache
 dist/
 .tmp
+.vscode

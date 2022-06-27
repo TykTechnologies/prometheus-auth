@@ -7,4 +7,4 @@ cd $(dirname $0)/..
 
 mkdir -p bin
 [ "$(uname)" != "Darwin" ] && LINKFLAGS="-extldflags -static -s"
-CGO_ENABLED=0 go build -ldflags "-X main.VERSION=$VERSION -X main.HASH=$COMMIT $LINKFLAGS" -o bin/prometheus-auth ./cmd/main.go
+GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -ldflags "-X main.VERSION=$VERSION -X main.HASH=$COMMIT $LINKFLAGS" -o bin/prometheus-auth ./cmd/main.go

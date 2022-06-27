@@ -1,5 +1,8 @@
 FROM golang:1.15.2-alpine3.12
 
+ARG DAPPER_HOST_ARCH
+ENV ARCH $DAPPER_HOST_ARCH
+
 RUN apk -U add bash git gcc musl-dev docker vim less file curl wget ca-certificates
 
 RUN go get -d golang.org/x/lint/golint && \
