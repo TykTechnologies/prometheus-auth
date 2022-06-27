@@ -43,7 +43,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            abhishiekgowtham/rancher-prometheus-auth
+            tykio/prometheus-auth
           tags: type=semver,pattern=v{{version}}
 
       - name: Build and push
